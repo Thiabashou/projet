@@ -13,10 +13,10 @@
     width:450px;
     height:650px;
     border-radius: 40px;
-    background-color: rgb(6, 6, 83);
+    background-color: rgb(49, 124, 161);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
-    color: rgb(49, 124, 161);
+  
     }
  </style>
         <!-- Fonts -->

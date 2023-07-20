@@ -85,7 +85,7 @@ flex-direction: row;
 }
 
 .test5 {
-    color: white;
+    color: rgb(49, 124, 161);
 }
 
 .container h1 {
@@ -98,13 +98,15 @@ flex-direction: row;
     max-width:500px;
     height:500px;
     border-radius: 40px;
-    background-color: rgb(49, 124, 161);
+    background-color: white  ;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     color: rgb(49, 124, 161);
 
 }
-
+.connect {
+    color: rgb(49, 124, 161);
+}
 .entete {
     display: flex;
     justify-content: space-between;
@@ -112,9 +114,12 @@ flex-direction: row;
     justify:space-between;
 }
 
+.ecrit {
+    color: rgb(49, 124, 161);
+}
 
 .remember {
-    color: white;
+    color: rgb(49, 124, 161);
 }
 
     </style>
@@ -143,10 +148,12 @@ flex-direction: row;
 <br>
 
 <h2>
+    <div class="ecrit">
 <strong>"Bienvenue dans votre page de demande <br>
              d'autorisation de sortie de vehicule. Créez un compte <br>
              puis connectez-vous en quelques instants et bénéficiez d'une navigation fluide"
 </strong>
+</div>
 </h2>
 
 </div>
@@ -170,7 +177,7 @@ flex-direction: row;
         
     <form method="POST" action="{{ route('login') }}" class="container" >
         @csrf
-<h1 align="center" id="connect">CONNEXION</h1>
+<div align="center" class="connect"><strong><u>CONNEXION</u></strong></div>
         <!-- Email Address -->
         <br>
 
@@ -229,7 +236,7 @@ flex-direction: row;
         <p align="center">
             <br>
             <br>
-            <div align="center">
+            <div align="center" class="ecrit">
             Pas encore de compte? Creez en un !
          
             <a  href="{{ route('register') }}">

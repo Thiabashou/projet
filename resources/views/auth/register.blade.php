@@ -76,11 +76,11 @@ flex-direction: row;
 
 .container {
     padding: 30px;
-    color: white;
+    color: rgb(49, 124, 161);
     max-width:500px;
     height:600px;
     border-radius: 40px;
-    background-color: rgb(49, 124, 161);
+    background-color: white;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     color: rgb(49, 124, 161);
@@ -104,9 +104,12 @@ flex-direction: row;
 }
 
 .ecrit {
-    color: darkblue;
+    color: rgb(49, 124, 161);
 }
 
+.connect {
+    color: rgb(49, 124, 161);
+}
 
 
     </style>
@@ -137,7 +140,8 @@ flex-direction: row;
         @csrf
         
 
-<h1 align="center">INSCRIPTION</h1>
+        <div align="center" class="connect"><strong><u>INSCRIPTION</u></strong></div>
+       
 <br>
         <!-- Name -->
         <div>
