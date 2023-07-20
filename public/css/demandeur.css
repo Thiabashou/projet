@@ -1,0 +1,177 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Ajoutez cette ligne */
+    grid-template-areas: "header" "main" "footer";
+  
+  }
+  .pied {
+    background-color: rgb(10, 50, 96);
+  }
+
+ul {
+    list-style-type: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+  }
+  
+  li {
+    padding: 10px; /* Ajoute un espacement interne aux éléments de la liste */
+    color: white;
+  }
+  
+  a {
+    text-decoration: none; /* Supprime la décoration de lien par défaut */
+    color: white; /* Couleur du texte des liens */
+  }
+
+header {    
+background-color: white;
+flex-direction: row;
+margin: auto;
+padding: auto;
+height: 19vh;
+width: 100%;
+margin-bottom: 20px;
+} 
+
+header nav {
+    margin: 0;
+}
+
+.bg-custom-blue {
+    background-color: rgb(31, 113, 141);
+}
+
+
+main {
+background-color: rgb(255, 255, 255);
+padding:auto;
+
+flex-direction: row;
+color:rgb(77, 126, 175);
+
+}
+
+footer {
+background-color: rgb(6, 6, 83);
+color: white;
+
+padding: auto;
+position: flex;
+max-width: auto;
+height: auto;
+flex-direction: row;
+}
+
+.entete {
+background-color: rgb(31, 113, 141);
+color:white;
+flex-direction: row;
+margin: 0;
+padding: 0;
+height: 16vh;
+width: 100%;
+margin-bottom: 20px;
+}
+
+.user {
+  background-color:rgb(246, 243, 243);
+  color: rgb(31, 113, 141);
+  border-radius: 5px;
+
+}
+
+
+.container {
+    width: 100%;
+    color:rgb(31, 113, 141) ;
+    margin: auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+  }
+  
+  .container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    color:rgb(31, 113, 141);
+    width:100%;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: vertical;
+  }
+  
+  .form-group input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(31, 113, 141);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color: rgb(31, 113, 141);
+  }
+
+ 
+.container1 {
+  padding: 50px;
+  color: white;
+  width:50%;
+  border-radius: 40px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  background-color:rgb(31, 113, 141);
+  
+
+}
+
+.gere {
+  background-color: rgb(6, 6, 83);
+   color: white;
+
+  }
+
+
+ .auto1 {
+    background-color: rgb(31, 113, 141);
+color:white;
+flex-direction: row;
+margin: 0;
+padding: 0;
+height: 16vh;
+width: 100%;
+margin-bottom: 20px;
+ }

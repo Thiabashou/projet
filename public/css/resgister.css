@@ -1,0 +1,92 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Ajoutez cette ligne */
+    grid-template-areas: "header" "main" "footer";
+  
+  }
+  .pied {
+    background-color: rgb(10, 50, 96);
+  }
+
+ul {
+    list-style-type: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+  }
+  
+  li {
+    padding: 10px; /* Ajoute un espacement interne aux éléments de la liste */
+    color: white;
+  }
+  
+  a {
+    text-decoration: none; /* Supprime la décoration de lien par défaut */
+    color: white; /* Couleur du texte des liens */
+  }
+
+header {    
+background-color: rgb(31, 113, 141);
+flex-direction: row;
+margin: auto;
+padding: 1px;
+height: 135px;
+width: 100%;
+margin-bottom: 20px;
+} 
+
+
+
+
+main {
+background-color: rgb(255, 255, 255);
+padding:auto;
+height:100vh;
+
+flex-direction: row;
+}
+
+footer {
+background-color: rgb(6, 6, 83);
+color: white;
+
+padding: auto;
+position: flex;
+width: auto;
+height: auto;
+flex-direction: row;
+}
+.container h1 {
+    color:white;
+}
+
+.container {
+    padding: 30px;
+    color: white;
+    max-width:500px;
+    height:600px;
+    border-radius: 40px;
+    background-color: rgb(49, 124, 161);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    color: rgb(49, 124, 161);
+
+}
+
+.flow {
+    background-attachment: fixed;
+    background-color: rgb(6, 6, 83);;
+    max-width:500px;
+    height:1500px;
+    border-radius: 40px;
+   
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.test5 {
+    color: white;
+}

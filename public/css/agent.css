@@ -1,0 +1,145 @@
+body {
+   
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Ajoutez cette ligne */
+  grid-template-areas: "header" "main" "footer";
+
+  }
+
+
+  .pied {
+    background-color: rgb(6, 6, 83);
+  }
+
+
+  ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+
+  li {
+    padding: 10px; 
+    color: white;
+  }
+  
+
+  a {
+    text-decoration: none; 
+    color: white;
+  }
+
+  header {    
+    background-color: white;
+    flex-direction: row;
+    margin: auto;
+    padding: auto;
+    height: 19vh;
+    width: 100%;
+    margin-bottom: 20px;
+    } 
+
+    header nav {
+      margin: 0;
+  }
+  
+
+.content {
+  background-color: rgb(255, 255, 255);
+  padding:auto;
+  height: auto;
+  flex-direction: row;
+  color:darkblue;
+}
+
+footer {
+  background-color: rgb(6, 6, 83);
+  color: white;
+  padding: auto;
+  position: flex;
+  max-width: auto;
+  height: auto;
+  flex-direction: row;
+  }
+  
+
+
+    
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    
+    .form-group input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: rgb(31, 113, 141);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: rgb(31, 113, 141);
+    }
+
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      padding: 20px;
+      width:500px;
+      height:70vh;
+      border-radius: 30px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+      color: white;
+      background-color:rgb(49, 124, 161) ;
+    }  
+
+    .contenu {
+      padding: 20px;
+      width:465px;
+      height:400px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+   color: rgb(49, 124, 161) ;
+   
+    }
+    .entete {
+      background-color: rgb(49, 124, 161);
+      color:white;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      height: 20vh;
+      width: 100%;
+      margin-bottom: 20px;
+      }
