@@ -11,8 +11,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
-        <style>
-   body {
+<style>
+body {
     
     margin: 0;
     padding: 0;
@@ -31,12 +31,12 @@ ul {
     margin: 0; /* Supprime la marge par défaut */
   }
   
-  li {
+li {
     padding: 10px; /* Ajoute un espacement interne aux éléments de la liste */
-    color: white;
+    color: red;
   }
   
-  a {
+a {
     text-decoration: none; /* Supprime la décoration de lien par défaut */
     color: white; /* Couleur du texte des liens */
   }
@@ -51,9 +51,6 @@ width: 100%;
 margin-bottom: 20px;
 } 
 
-
-
-
 main {
 background-color: rgb(255, 255, 255);
 padding:auto;
@@ -66,7 +63,6 @@ color:darkblue;
 footer {
 background-color: rgb(6, 6, 83);
 color: white;
-
 padding: auto;
 position: flex;
 max-width: auto;
@@ -85,7 +81,7 @@ flex-direction: row;
 }
 
 .test5 {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
 
 .container h1 {
@@ -101,11 +97,9 @@ flex-direction: row;
     background-color: white  ;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
-    color: rgb(49, 124, 161);
-
 }
 .connect {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
 .entete {
     display: flex;
@@ -113,16 +107,14 @@ flex-direction: row;
     color:white;
     justify:space-between;
 }
-
 .ecrit {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
-
 .remember {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
 
-    </style>
+</style>
     </head>
     <body>
    

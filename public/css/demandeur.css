@@ -16,10 +16,13 @@ ul {
     padding: 0; /* Supprime le padding par défaut */
     margin: 0; /* Supprime la marge par défaut */
   }
+
+
   
   li {
     padding: 10px; /* Ajoute un espacement interne aux éléments de la liste */
     color: white;
+    color: rgb(40, 81, 102);
   }
   
   a {
@@ -51,8 +54,11 @@ background-color: rgb(255, 255, 255);
 padding:auto;
 
 flex-direction: row;
-color:rgb(77, 126, 175);
+color: rgb(40, 81, 102);
 
+}
+u {
+  color: rgb(40, 81, 102)
 }
 
 footer {
@@ -174,4 +180,12 @@ padding: 0;
 height: 16vh;
 width: 100%;
 margin-bottom: 20px;
+ }
+
+ 
+
+
+
+ .affiche {
+  color: rgb(59, 232, 146);
  }

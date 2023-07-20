@@ -33,7 +33,7 @@ ul {
   
   li {
     padding: 10px; /* Ajoute un espacement interne aux éléments de la liste */
-    color: white;
+    color: red;
   }
   
   a {
@@ -104,11 +104,11 @@ flex-direction: row;
 }
 
 .ecrit {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
 
 .connect {
-    color: rgb(49, 124, 161);
+    color: rgb(40, 81, 102);
 }
 
 

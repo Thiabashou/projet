@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Demande;
+use App\Models\Demande;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\demandecontroller;
+use Illuminate\Support\Facades\Auth;
+use Flash;
 
-class agentcontroller extends Controller
+class demandecontroller extends Controller
 {
     public function index()
     {
@@ -16,33 +18,27 @@ class agentcontroller extends Controller
         return view('demande');
 
     }
-    public function submit_aller(Request $request)
-{
-    // Traitement des données du formulaire de demande
-    // ...
-$demande =$request->all();
+    public function submitForm(Request $request)
+    {
+        // Traitement du formulaire ici (par exemple, sauvegarde des données dans la base de données)
+        // $request contient les données envoyées par le formulaire
+        
+        // Exemple de sauvegarde des données dans la base de données
+        // Vérifiez le nom des champs du formulaire dans votre HTML pour les récupérer correctement ici
+        $demande = new Demande();
+        $motif = $request->input('motif');
+        $destination = $request->input('destination');
+        $date = $request->input('dateDm');
+        
+       
 
-$demande['status'] = 'en cours';
-$demande['type'] = 'aller';
-Demande::create($demande);
-
-    // Redirection vers la page de demande avec un message de succès
-    return redirect()->route('retour')->with('success', 'La demande a été envoyée avec succès !');
-}
-public function submit_retour(Request $request)
-{
-    // Traitement des données du formulaire de demande
-    // ...
-
-    $demande =$request->all();
-
+        // Enregistrez les données dans la base de données en utilisant le modèle approprié
+        // Exemple : Demande::create(['motif' => $motif, 'destination' => $destination, 'date' => $date]);
+        
+        // Redirigez l'utilisateur vers une page de succès ou une autre action souhaitée
+        return redirect()->route('dashboard')->with('success', 'Votre formulaire a été soumis avec succès !');
+    }
    
-    $demande['status'] = 'en cours';
-    $demande['type'] = 'aller';
-    Demande::create($demande);
-    // Redirection vers la page de demande avec un message de succès
-    return redirect()->route('retour')->with('success', 'La demande a été envoyée avec succès !');
-}
 // app/Http/Controllers/DemandeController.php
 
 public function demande()
@@ -53,4 +49,33 @@ public function demande()
     return view('demande');
 }
 
+
+// Dans la méthode qui traite le formulaire
+public function store(Request $request)
+{
+  
+       // Validation des données du formulaire
+    $validatedData = $request->validate([
+        'motif' => 'required',
+        'destination' => 'required',
+        'dateDm' => 'required',
+    ]);
+
+    // Récupérer l'utilisateur connecté (demandeur)
+    $demandeur = Auth::user();
+
+    // Créer une nouvelle demande avec les données du formulaire
+    $demande = new Demande();
+    $demande->motif = $validatedData['motif'];
+    $demande->destination = $validatedData['destination'];
+    $demande->dateDm = $validatedData['dateDm'];
+    $demande->user_id = $demandeur->id;
+
+
+    // Enregistrer la demande dans la base de données
+    $demande->save();
+
+    // Rediriger l'utilisateur vers une page de confirmation ou de succès
+    return redirect()->route('dashboard')->with('success', 'Demande enregistrée avec succès!');
+}
 }

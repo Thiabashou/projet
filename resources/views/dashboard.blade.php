@@ -36,7 +36,13 @@
 <p align="center">
         <div class="texxt" align="center">
         <br>
-        
+        <div class="affiche">
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif    
+</div>
 <br>
 
              <h2><strong>"Laissez-nous simplifier votre demande <br>
@@ -52,8 +58,9 @@
 </h2>
 </div>
 <div class="container1"> 
-    <form  class="container">
-<h2 align="center"><strong><u>Formulaire demande</u></strong></h2>
+    <form  class="container" action="{{ route('form.submit') }}"method="POST">
+    @csrf
+<h2 align="center"><strong><u>FORMULAIRE DEMANDE</u></strong></h2>
 </br>
       <div class="form-group">
         <label for="motif">Motif de la sortie :</label>
@@ -74,7 +81,7 @@
       <br>
         <p align="center">        
                  <x-primary-button type="submit">
-                    <strong>envoyer</strong></u>
+                    <strong>Envoyer</strong></u>
                  </x-primary-button>  
         </p>
       </div> 
