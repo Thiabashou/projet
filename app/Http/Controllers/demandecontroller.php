@@ -2,50 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Demande;
-use Carbon\Carbon;
+
 use Illuminate\Http\Request;
-use App\Http\Controllers\demandecontroller;
+use App\Models\Demande;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Flash;
 
-class demandecontroller extends Controller
+class DemandeController extends Controller
 {
     public function index()
     {
 
-        // Logique pour afficher la page "client"
         return view('demande');
 
-    }
-    public function submitForm(Request $request)
-    {
-        // Traitement du formulaire ici (par exemple, sauvegarde des données dans la base de données)
-        // $request contient les données envoyées par le formulaire
-        
-        // Exemple de sauvegarde des données dans la base de données
-        // Vérifiez le nom des champs du formulaire dans votre HTML pour les récupérer correctement ici
-        $demande = new Demande();
-        $motif = $request->input('motif');
-        $destination = $request->input('destination');
-        $date = $request->input('dateDm');
-        
-       
-
-        // Enregistrez les données dans la base de données en utilisant le modèle approprié
-        // Exemple : Demande::create(['motif' => $motif, 'destination' => $destination, 'date' => $date]);
-        
-        // Redirigez l'utilisateur vers une page de succès ou une autre action souhaitée
-        return redirect()->route('dashboard')->with('success', 'Votre formulaire a été soumis avec succès !');
     }
    
 // app/Http/Controllers/DemandeController.php
 
 public function demande()
 {
-    // Logique pour récupérer les données nécessaires à la page de demande
-    // ...
-
+   
     return view('demande');
 }
 
@@ -58,7 +35,8 @@ public function store(Request $request)
     $validatedData = $request->validate([
         'motif' => 'required',
         'destination' => 'required',
-        'dateDm' => 'required',
+        'date_depart' => 'required',
+        'date_retour' => 'required',
     ]);
 
     // Récupérer l'utilisateur connecté (demandeur)
@@ -68,7 +46,8 @@ public function store(Request $request)
     $demande = new Demande();
     $demande->motif = $validatedData['motif'];
     $demande->destination = $validatedData['destination'];
-    $demande->dateDm = $validatedData['dateDm'];
+    $demande->date_depart = $validatedData['date_depart'];
+    $demande->date_retour = $validatedData['date_retour'];
     $demande->user_id = $demandeur->id;
 
 
@@ -77,5 +56,87 @@ public function store(Request $request)
 
     // Rediriger l'utilisateur vers une page de confirmation ou de succès
     return redirect()->route('dashboard')->with('success', 'Demande enregistrée avec succès!');
+}
+
+public function affichageA($numero_demande)
+{
+    // Récupérer les données de la demande en fonction de $numero_demande depuis la base de données (ou autre source)
+    $demande = Demande::where('idDm', $numero_demande)->first();
+
+    // Afficher la vue du formulaire de demande avec les données de la demande
+
+    return view('aller',  ['demande' => $demande]);
+
+}
+ 
+public function traitement(Request $request)
+{
+    
+       // Validation des données du formulaire
+    $validatedData = $request->validate([
+        'type' => 'required',
+        'status' => 'required',
+        'heure_depart' => 'required',
+        'index_km_retour' => 'required',
+    ]);
+ 
+    // Récupérer l'utilisateur connecté (demandeur)
+    $numero_demande = $request->input('numero_demande');
+    $demande = Demande::where('idDm', $numero_demande)->first(); 
+   
+-
+    $demande->type =$request->input('type');
+    $demande->status = $request->input('status');
+    $demande->heure_depart = $request->input('heure_depart');
+    $demande->index_km_retour = $request->input('index_km_retour');
+  
+ 
+ 
+    // Enregistrer la demande dans la base de données
+    $demande->save();
+ 
+    // Rediriger l'utilisateur vers une page de confirmation ou de succès
+    return redirect()->route('aller')->with('success', 'Demande validée avec succès!');
+
+}
+
+
+
+
+
+
+
+public function affichageR($numero_demande)
+{
+    
+    return view('retour');
+}
+
+
+
+public function cloture(Request $request)
+{
+  
+       // Validation des données du formulaire
+    $validatedData = $request->validate([
+        'heure_retour' => 'required',
+        'index_km_retour' => 'required',
+      
+    ]);
+
+    // Récupérer l'utilisateur connecté (demandeur)
+    $numero_demande = $request->input('numero_demande');
+    $demande = Demande::where('idDm', $numero_demande)->first(); 
+    
+    $demande->heure_retour = $request->input('heure_retour');
+    $demande->index_km_retour = $request->input('index_km_retour');
+  
+
+
+    // Enregistrer la demande dans la base de données
+    $demande->save();
+
+    // Rediriger l'utilisateur vers une page de confirmation ou de succès
+    return redirect()->route('retour')->with('success', 'Demande cloturée avec succès!');
 }
 }

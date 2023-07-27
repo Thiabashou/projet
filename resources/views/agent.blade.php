@@ -28,21 +28,55 @@
     <br>
     
     <main >
-       <p align="center">
-        "Veuillez renseigner les informations si dessous pour valider l'autorisation de la sortie"
-       </p>
+      
        <br>
-    <br>
-    
+
 
     
         <br>
-       <div align="center">
-LISTE DE TOUTES LES DEMANDES:
 
+
+       <div align="center">
+
+     <h1><strong ><u class="colour">LISTE DE TOUTES LES DEMANDES:</u></strong></h1>
+     <br> 
+     <br>
+      <table style="border: 1px solid black; border-collapse: collapse;">
+       <thead>
+         <tr class="coloru">
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Numero_demande</th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;"> id_demandeur</th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Motif de la sortie </th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Destination </th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Date_de_depart</th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Date_de_retour</th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Compléter_demande</th>
+            <th style="border: 1px solid black; padding: 8px; margin-right: 20px;">Cloturer _demande</th>
+         </tr>
+       </thead>
+    <tbody>
+        @foreach ($demandes as $demande)
+            <tr>
+                <td class="coloru" style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->idDm }}</td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->user_id }}</td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->motif }}</td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->destination }}</td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->date_depart }}</td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">{{ $demande->date_retour }}</td>
+
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">
+   <a href="{{ route('aller', ['numero_demande' => $demande->idDm]) }}" class="co"><u>Compléter la demande</u></a>
+              </td>
+                <td style="border: 1px solid black; padding: 8px; margin-right: 20px;">
+   <a href="{{ route('retour', ['numero_demande' => $demande->idDm]) }}" class="co"><u>Cloturer la demande</u></a>
+              </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 </div>
- </div>
-         </div>
+</div>
+</div>
          <br>
          <br>
          <br>

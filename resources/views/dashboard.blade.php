@@ -53,15 +53,15 @@
 
 
 
-</br>
-</br>
+<br>
+<br>
 </h2>
 </div>
 <div class="container1"> 
-    <form  class="container" action="{{ route('form.submit') }}"method="POST">
+    <form  class="container" action="{{ route('form.submit') }}" method="POST">
     @csrf
 <h2 align="center"><strong><u>FORMULAIRE DEMANDE</u></strong></h2>
-</br>
+<br>
       <div class="form-group">
         <label for="motif">Motif de la sortie :</label>
         <textarea id="motif" name="motif" placeholder="Entrez le motif de la sortie" required></textarea>
@@ -72,8 +72,12 @@
         <input type="text" id="destination" name="destination" placeholder="Entrez la destination" required>
       </div>
       <div class="form-group">
-        <label for="date">Date :</label>
-        <input type="date" id="date" name="dateDm" required>
+        <label for="date">Date de depart :</label>
+        <input type="date" id="date" name="date_depart" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date  de retour:</label>
+        <input type="date" id="date" name="date_retour" required>
       </div>
 
 
@@ -87,8 +91,8 @@
       </div> 
 </div>
 </div>
-</br>
-</br>
+<br>
+<br>
     <br>
 
 </main>

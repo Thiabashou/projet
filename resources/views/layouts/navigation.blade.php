@@ -5,7 +5,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-@if (Auth::user()->role == 'demandeur'  )          
+@if (Auth::user()->role == 'demandeur')          
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -19,6 +19,13 @@
                     </x-nav-link>
                 </div>
 @else 
+
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+    <x-nav-link :href="route('agent')" :active="request()->routeIs('agent')">
+        {{ __('LISTE DES DEMANDES') }}
+
+    </x-nav-link>
+</div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('aller')" :active="request()->routeIs('aller')">
                         {{ __('ALLER') }}
